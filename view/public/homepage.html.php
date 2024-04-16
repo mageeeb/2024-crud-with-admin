@@ -21,7 +21,10 @@
                 <h3 class="error"><?=$error?></h3>
         <?php else:
                 foreach($ourDatas as $item): ?>
-                    |
+                    <h4><?=$item['title']?></h4>
+                    <p><?=$item['ourdesc']?></p>
+                    <p>Latitude : <?=$item['latitude']?></p>
+                    <p>Longitude : <?=$item['longitude']?></p>
                 <?php endforeach; ?>
         <?php endif; ?>
     </div>
