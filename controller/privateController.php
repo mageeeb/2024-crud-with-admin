@@ -19,12 +19,18 @@ if(isset($_GET['insert'])){
         $longitude = (float) $_POST['longitude'];
 
         // si on récupère true, à cette fonction, il faut rédiriger vers l'accueil de l'admin, sinon affichage d'une erreur
-        addOurdatas($connect,$title,$oudesc,$latitude,$longitude);
+        $insert = addOurdatas($connect,$title,$oudesc,$latitude,$longitude);
+        if($insert === true){
+            header("Location: ./");
+            exit();
+        }else{
+            $error = $insert;
+        }
     }
 
     // appel de la vue d'insertion
     require "../view/private/admin.insert.html.php";
-    var_dump($_POST);
+    //var_dump($_POST);
     exit();
 }
 
