@@ -75,3 +75,18 @@ function addOurdatas(PDO $db,
         return $e->getMessage();
     }
 }
+
+// supprimer une donnée
+
+function deleteOurdatas(PDO $db, int $id): bool|string
+{
+    $prepare = $db->prepare("DELETE FROM ourdatas WHERE idourdatas = ?");
+    $prepare->bindParam(1,$id,PDO::PARAM_INT);
+    try{
+        $prepare->execute();
+        if($prepare->rowCount()===0) return "Data non existante";
+        return true;
+    }catch(Exception $e){
+        return $e->getMessage();
+    }
+}

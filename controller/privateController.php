@@ -63,6 +63,8 @@ if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
         }
     }
 
+    // on charge les données à modifier
+
     $data = getOneOurdatas($connect,$idUpdate);
     if(is_string($data)) $message = $data;
     elseif(isset($data['error'])) $error = $data['error'];
@@ -71,6 +73,29 @@ if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
     //var_dump($_POST);
     exit();
 
+}
+
+
+if(isset($_GET['delete'])&&ctype_digit($_GET['delete'])){
+
+    $idDelete = (int) $_GET['delete'];
+
+    if(isset($_GET['confirm'])){
+
+        $delete = deleteOurdatas($connect,$idDelete);
+        if($delete === true){
+            header("Location: ./");
+            exit();
+        }else{
+            $error = $delete;
+        }
+    }
+    $data = getOneOurdatas($connect,$idDelete);
+    if(is_string($data)) $message = $data;
+    elseif(isset($data['error'])) $error = $data['error'];
+    // appel de la vue de suppression
+    require "../view/private/admin.delete.html.php";
+    exit();
 }
 
 // on charge toutes les données
