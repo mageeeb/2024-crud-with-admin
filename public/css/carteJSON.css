@@ -1,0 +1,14 @@
+#carte {
+    width:100%;
+    height:800px;
+}
+
+.photo {
+    width:100px;
+}
+
+#resultats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}

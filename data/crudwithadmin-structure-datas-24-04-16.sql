@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `ourdatas` (
 
 INSERT INTO `ourdatas` (`idourdatas`, `title`, `ourdesc`, `latitude`, `longitude`) VALUES
                                                                                        (1, 'test - Chimay', 'mes premières datas', '50.04689', '4.3137284'),
-                                                                                       (2, 'Bruxelles', 'On trouve 79 attestations du nom de la localité sous diverses formes jusqu\'en 1219, dont : Bruocsella en 966 (copie du xve siècle, Maastricht) ; Bruocesll[a] au xie siècle, Brucselle (génitif) en 1047 ; Brvsela en 1062 ; Brosele en 1088 ; Brucsellam (accusatif) en 1095, Brucsella en 1117 / 1129 / 1130 ; Bruxellę (génitif) en 1125 ; Brussella vers 1125, en 1146 / 1179 / 1183 / 1194 / 1195 / 1198 / ', '50.8441333', '4.3608051'),
+                                                                                       (2, 'Bruxelles', 'On trouve 79 attestations du nom de la localité sous diverses formes jusqu\'en 1219, dont : Bruocsella en 966 (copie du xve siècle, Maastricht) ', '50.8441333', '4.3608051'),
                                                                                        (3, 'The Queen\'s House', 'The Queen\'s House - London', '51.481096', '-0.00375299999');
 SET FOREIGN_KEY_CHECKS=1;
 COMMIT;
